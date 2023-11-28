@@ -20,9 +20,10 @@ window.onload = (event) => {
 
     function UpdateSqures(event) {
         const btn = event.target;
-        btn.style.backgroundColor = "green";
+        let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        btn.style.backgroundColor = "#" + randomColor;
         squares.push(btn.id);
-        if (squares.length === 6) setTimeout(() => { ReverseSquares(); }, 1000)
+        if (squares.length === 6) setTimeout(() => { ReverseSquares(); }, 700)
     }
 
     function ReverseSquares() {
@@ -32,7 +33,7 @@ window.onload = (event) => {
             const reverse_btn = document.getElementById(id);
             setTimeout(() => {
                 reverse_btn.style.backgroundColor = "";
-            }, index * 1000);
+            }, index * 700);
             squares = [];
         }
     }
